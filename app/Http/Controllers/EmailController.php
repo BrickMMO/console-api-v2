@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
+
+
 class EmailController extends Controller
 {
 
@@ -16,9 +20,17 @@ class EmailController extends Controller
 
     public function send(Request $request)
     {
+        
 
-        die('here');
+        $data['subject'] = 'test';
+        $data['message'] = 'test';
 
+        $email = new WelcomeEmail($data);
+        Mail::to('thomasadam83@hotmail.com')->send($email);
+        die('Welcome email sent successfully.');
+
+
+        
     }
 
 }

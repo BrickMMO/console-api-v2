@@ -35,4 +35,5 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(EmailController::class)->group(function () {
     Route::post('/email/send', 'send');
+    Route::get('/email/send', 'send');
 });
