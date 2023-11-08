@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +31,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('user', 'user');
     Route::get('users', 'getUsers');
     Route::post('addAdmin', 'addAdmin');
+});
+
+Route::controller(EmailController::class)->group(function () {
+    Route::post('/email/send', 'send');
 });
