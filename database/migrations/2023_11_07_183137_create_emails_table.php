@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('from');
             $table->string('subject');
             $table->string('sendgrid_id');
-            $table->text('message');            
             $table->timestamps();
         });
     }
